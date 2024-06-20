@@ -6,6 +6,10 @@ First, you will need the .env file (which should be beside this README file) wit
 
 API_URL="https://api.currencybeacon.com/v1/"
 API_KEY="" (Redacted) 
+NUMBER_RECENT_CONVERSIONS="5"
+
+NOTE: For NUMBER_RECENT_CONVERSIONS, the number corresponds to an exclusive array index. If you want only 1 history, use "0". If you want 10 history, use "11"
+
 
 Then, install dependencies:
 ```bash

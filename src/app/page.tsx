@@ -1,5 +1,7 @@
 import Converter from "@/components/Converter";
 
+export const dynamic = 'force-dynamic'
+const historyMax = process.env.NUMBER_RECENT_CONVERSIONS as string
 
 async function getCurrencyOptions() {
     const res = await fetch(`${process.env.API_URL}currencies?api_key=${process.env.API_KEY}&type=fiat`, {
@@ -23,7 +25,7 @@ export default async function Home() {
                 Really Good Currency Conversion Tool
             </h1>
             {/* @ts-ignore     <-- I wouldnt do this if I had more time to type the response */}
-            <Converter options={options.response.sort(({ name }) => name)} />
+            <Converter options={options.response.sort(({ name }) => name)} maxHistory={historyMax} />
         </main>
     );
 }
